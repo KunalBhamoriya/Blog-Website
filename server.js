@@ -3,10 +3,12 @@ const cors = require("cors");
 const morgan = require("morgan");
 const colors = require("colors");
 const dotenv = require("dotenv");
+const connectDb = require("./config/connectDb");
 //env file
 dotenv.config();
 
 //rest object
+connectDb();
 const app = express();
 
 //middlewares
