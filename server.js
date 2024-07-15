@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 
 //routes
 app.get('/', (req,res) =>{
-    res.send("<h1>Hello world</h1>");
+    res.send("<h1>Hello</h1>");
 })
 
 const PORT = 8080 || process.env.PORT;
