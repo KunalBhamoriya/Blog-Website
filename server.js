@@ -17,10 +17,11 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 
-//routes
-app.get('/', (req,res) =>{
-    res.send("<h1>Hello</h1>");
-})
+//user routes
+app.use('users', require('./routes/userRoute'));
+
+//blog route
+app.use('blogs', require('./routes/blogRoute'));
 
 const PORT = 8080 || process.env.PORT;
 
