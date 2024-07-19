@@ -18,10 +18,10 @@ app.use(morgan('dev'));
 
 
 //user routes
-app.use('users', require('./routes/userRoute'));
+app.use('/api/v1/users', require('./routes/userRoute'));
 
 //blog route
-app.use('blogs', require('./routes/blogRoute'));
+app.use('/api/v1/blogs', require('./routes/blogRoute'));
 
 const PORT = 8080 || process.env.PORT;
 

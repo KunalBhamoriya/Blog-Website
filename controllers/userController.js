@@ -1,5 +1,7 @@
 const userModel = require('../models/userModel');
 
+const getAllUsers = () => {};
+
 //login callback
 const loginController = async (req,res) => {
     try{
@@ -25,4 +27,4 @@ const registerController = async (req,res) => {
     }
 };
 
-module.exports = {loginController, registerController};
+module.exports = {loginController, registerController, getAllUsers};
