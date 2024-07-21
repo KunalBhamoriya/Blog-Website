@@ -5,6 +5,8 @@ const {loginController, registerController} = require('../controllers/userContro
 const router = express.Router()
 
 //Routers
+//router.get('/all-users',getAllUsers);
+
 // POST || LOGIN
 router.post('/login', loginController);
 
