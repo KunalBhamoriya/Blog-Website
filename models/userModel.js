@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //schema design
 const userSchema = new mongoose.Schema({
-    name :{
+    username :{
         type:String,
         required:[true, 'name is required']
     },
@@ -14,8 +14,14 @@ const userSchema = new mongoose.Schema({
     password:{
         type: String,
         required:[true, 'password is required'],
-    }
+    },
+    blogs:[
+        {
+            type: mongoose.Types.ObjectId,
+            ref: "Blog",
+        },
+    ],
 },{timestamps:true});
 
-const userModel = mongoose.model('users', userSchema);
+const userModel = mongoose.model('User', userSchema);
 module.exports = userModel;
