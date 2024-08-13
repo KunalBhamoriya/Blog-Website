@@ -10,6 +10,10 @@ const blogSchema = new mongoose.Schema({
         type: String,
         required:[true, "description is required"],
     },
+    image:{
+        type:String,
+        require:[true, "image is required"],
+    },
     hashTags:{
         type: String
     },
