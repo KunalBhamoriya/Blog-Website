@@ -4,7 +4,9 @@
   "main": "sever.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client":"npm start --prefix ./client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "Kunal Bhamoriya",
@@ -13,6 +15,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "colors": "^1.4.0",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "create-react-app": "^5.0.1",
     "dotenv": "^16.4.5",
