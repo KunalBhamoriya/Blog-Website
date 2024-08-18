@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {Box, TextField, Typography, Button} from '@mui/material'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Registerpage = () => {
@@ -20,9 +21,25 @@ const Registerpage = () => {
       }));
     };
 
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try{
+        const {data} = await axios.post("api/v1/user/register",{
+          usename: inputs.name,
+          email: inputs.email,
+          password: inputs.password,
+        });
+        if(data.success){
+          navigate("/login");
+        }
+      } catch(error){
+        console.log(error);
+      }
+    }
+
   return (
     <>
-      <form>
+      <form onSubmit={handleSubmit}>
         <Box maxWidth={450}
             display={'flex'}
             flexDirection={'column'} 
